@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import { useSelector } from 'react-redux';
@@ -18,13 +18,14 @@ const Home = () => {
             {tasks !== undefined &&
               tasks
                 .filter(({ column }) => column === 1)
-                .map(({ id, title, image, column }, index) => (
+                .map(({ id, title, image, column, description }, index) => (
                   <Task
                     key={index}
                     id={id}
                     column={column}
                     title={title}
                     image={image}
+                    description={description}
                   />
                 ))}
           </Column>
@@ -35,13 +36,14 @@ const Home = () => {
             {tasks !== undefined &&
               tasks
                 .filter(({ column }) => column === 2)
-                .map(({ id, title, image, column }, index) => (
+                .map(({ id, title, image, column, description }, index) => (
                   <Task
                     key={index}
                     id={id}
                     column={column}
                     title={title}
                     image={image}
+                    description={description}
                   />
                 ))}
           </Column>
@@ -52,13 +54,14 @@ const Home = () => {
             {tasks !== undefined &&
               tasks
                 .filter(({ column }) => column === 3)
-                .map(({ id, title, image, column }, index) => (
+                .map(({ id, title, image, column, description }, index) => (
                   <Task
                     key={index}
                     id={id}
                     column={column}
                     title={title}
                     image={image}
+                    description={description}
                   />
                 ))}
           </Column>

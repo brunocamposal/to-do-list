@@ -22,6 +22,7 @@ const AddButton = () => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
+  const [description, setDescription] = useState('');
 
   const dispatch = useDispatch();
 
@@ -35,6 +36,7 @@ const AddButton = () => {
       title: name,
       column: 1,
       image: image,
+      description: description,
     };
 
     dispatch(createTask(task_data));
@@ -77,6 +79,17 @@ const AddButton = () => {
                 fullWidth
                 value={image}
                 onInput={(e) => setImage(e.target.value)}
+              />
+            </DialogContentText>
+
+            <DialogContentText>
+              <TextField
+                id="standard-basic"
+                label="Description"
+                name="task-description"
+                fullWidth
+                value={description}
+                onInput={(e) => setDescription(e.target.value)}
               />
             </DialogContentText>
           </DialogContent>

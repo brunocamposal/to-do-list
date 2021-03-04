@@ -17,4 +17,12 @@ export const Container = styled.div`
   h1 {
     margin-bottom: 30px;
   }
+
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 17pt;
+    }
+
+    height: 100vh;
+  }
 `;
