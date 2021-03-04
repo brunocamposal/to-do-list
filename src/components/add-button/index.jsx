@@ -33,7 +33,7 @@ const AddButton = () => {
     const task_data = {
       id: tasks.length + 1,
       title: name,
-      column: 'TODO',
+      column: 1,
       image: image,
     };
 

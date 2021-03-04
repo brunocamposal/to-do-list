@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { useDispatch } from 'react-redux';
+
+import { changeTaskColumn, deleteTask } from '../../store/tasks/actions';
+
 import { makeStyles } from '@material-ui/core/styles';
 
 import {
@@ -10,12 +14,10 @@ import {
   IconButton,
 } from '@material-ui/core';
 
-import { Container } from './styles';
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
 
-import {
-  DeleteOutlinedIcon,
-  ArrowForwardOutlinedIcon,
-} from '@material-ui/icons/DeleteOutlined';
+import { Container } from './styles';
 
 const useStyles = makeStyles((theme) => ({
   media: {
@@ -35,8 +37,18 @@ const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.substr(1);
 };
 
-const Task = ({ title, image }) => {
+const Task = ({ id, title, image, column }) => {
   const classes = useStyles();
+
+  const dispatch = useDispatch();
+
+  const handleChangeColum = () => {
+    dispatch(changeTaskColumn(id, column));
+  };
+
+  const handleDeleteTask = () => {
+    dispatch(deleteTask(id));
+  };
 
   return (
     <>
@@ -44,7 +56,7 @@ const Task = ({ title, image }) => {
         <Card style={{ marginBottom: 20 }}>
           <CardHeader
             action={
-              <IconButton>
+              <IconButton onClick={handleDeleteTask}>
                 <DeleteOutlinedIcon />
               </IconButton>
             }
@@ -57,7 +69,7 @@ const Task = ({ title, image }) => {
           )}
 
           <CardActions disableSpacing>
-            <IconButton className={classes.expand}>
+            <IconButton className={classes.expand} onClick={handleChangeColum}>
               <ArrowForwardOutlinedIcon />
             </IconButton>
           </CardActions>

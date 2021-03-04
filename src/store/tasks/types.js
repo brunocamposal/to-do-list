@@ -1,1 +1,3 @@
 export const CREATE_TASK = 'CREATE_TASK';
+export const CHANGE_TASK_COLUMN = 'CHANGE_TASK_COLUMN';
+export const DELETE_TASK = 'DELETE_TASK';
