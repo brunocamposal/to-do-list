@@ -14,16 +14,16 @@ export default createGlobalStyle`
         width: 100%;
     }
     body {
-        background-color: #FFFFFF;
-        color: var(--primary-font);
+        color: var(--secondary-font);
+        background-color: var(--primary-bg);
         font-family: Arial, Helvetica, sans-serif;
         scroll-behavior: smooth;
+        overflow-x: hidden;
     }
 
     :root{
         --primary-font: #31393C;
         --secondary-font: #FFFFFF;
-        --primary-bg: #f1f1f1;
-        --menu-bg: #131921;
+        --primary-bg: #131618;
     }
 `;
