@@ -27,12 +27,12 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 import Swal from 'sweetalert2';
 
-import { Container } from './styles';
+import { Container, Description } from './styles';
 
 const useStyles = makeStyles(() => ({
   media: {
     height: 0,
-    paddingTop: '45%', 
+    paddingTop: '45%',
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -108,15 +108,15 @@ const Task = ({ id, title, image, column, description }) => {
               </IconButton>
             }
             title={capitalize(title)}
-            subheader="September 14, 2016"
+            subheader="March 05, 2021"
             style={{ textAlign: 'left' }}
           />
           {image && (
             <CardMedia className={classes.media} image={image} title={title} />
           )}
-
-          <Typography variant="h6" component="h4">
-            {description}
+          
+          <Typography style={{ padding: 15 }}>
+            <Description> {description} </Description>
           </Typography>
 
           <CardActions disableSpacing>

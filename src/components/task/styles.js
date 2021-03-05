@@ -9,4 +9,6 @@ export const Container = styled.div`
   }
 `;
 
-
+export const Description = styled.p`
+  font-size: 15pt;
+`;
